@@ -1,0 +1,166 @@
+🟢 DAY 2 — BITS, BYTES & MEMORY
+**How computers store *everything***
+### Today’s goal
+Understand:
+* What a **bit** really is
+* How bits become **numbers, text, images**
+* What a **byte** and **memory address** are
+
+No code again. Still foundations.
+
+---
+
+1️⃣ What is a Bit?
+A **bit** is the smallest unit of information.
+It can be:
+* `0` → OFF
+* `1` → ON
+
+Physically:
+* Voltage low / high
+* Switch off / on
+* Charge absent / present
+
+💡 A computer understands **only this**.
+
+---
+
+2️⃣ Why Only 0 and 1?
+Because:
+* Electronics are unreliable in the middle
+* Two states are **stable and safe**
+
+So computers use **binary**.
+
+Example:
+0 = no electricity
+1 = electricity
+
+---
+
+3️⃣ From Bits to Numbers
+A single bit is boring.
+So we **group bits**.
+
+1 bit
+0 or 1
+
+2 bits
+00 = 0
+01 = 1
+10 = 2
+11 = 3
+
+3 bits
+000 = 0
+111 = 7
+
+Each extra bit **doubles** what you can represent.
+
+---
+
+4️⃣ What is a Byte?
+A **byte = 8 bits**
+
+Example:
+01000001
+That’s a byte.
+
+With 1 byte you can represent:
+* Numbers 0 → 255
+* Or letters
+* Or symbols
+
+---
+
+5️⃣ How Letters Are Stored (Text Example)
+Computers use standards like **ASCII**.
+Example:
+A = 65 = 01000001
+B = 66 = 01000010
+
+So the word:
+"Hi"
+
+Is stored as:
+H = 72
+i = 105
+
+Just numbers in RAM.
+
+---
+
+6️⃣ How Images Are Stored (Simple)
+An image is:
+* A grid of pixels
+* Each pixel = color value
+* Each color = number
+
+Example:
+* Black = 0
+* White = 255
+
+So an image is just:
+> **A huge list of numbers in memory**
+
+---
+
+7️⃣ What is Memory (RAM) Really?
+RAM is:
+* A long row of boxes
+* Each box has:
+
+  * An **address**
+  * A **byte of data**
+
+Example:
+Address 1000 → 01000001
+Address 1001 → 01000010
+
+CPU says:
+> “Give me what’s at address 1000”
+
+RAM responds instantly.
+
+---
+
+8️⃣ Why Addresses Matter
+Without addresses:
+* CPU wouldn’t know where data is
+* Programs would overwrite each other
+
+So:
+> Every byte in RAM has a **unique address**
+
+This is the base of pointers later.
+
+---
+
+✏️ DO (Paper Task)
+1. Write:
+   * Bit = ?
+   * Byte = ?
+2. Draw:
+Address → Value
+1000    → 01000001
+1001    → 01000010
+3. Write:
+> “Everything in a computer is numbers.”
+
+---
+
+🧠 Lock-in Thought
+
+> Text is numbers
+> Images are numbers
+> Sound is numbers
+> Programs are numbers
+
+Only **meaning** changes.
+
+---
+
+
+
+
+
