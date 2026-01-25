@@ -1,46 +1,33 @@
-*********************************************************************************************************************************************************
-
-Let's start with:...
-🟢 DAY 1 — HOW A COMPUTER THINKS
-Learn
-What is a CPU?
-What is RAM?
-What is a program?
-
-*********************************************************************************************************************************************************
-
 🟢 DAY 1 — HOW A COMPUTER THINKS (DETAILED)
 
 ---
 
 1️⃣ What is a CPU? (Deep but simple)
-
-📌 Definition:
-  CPU (Central Processing Unit)** is the part of the computer that;
+📌 Definition
+**CPU (Central Processing Unit)** is the part of the computer that:
 * Reads instructions
 * Decides what they mean
 * Executes them
 * Repeats this billions of times per second
 
-A CPU does **only 4 basic things**;
+A CPU does **only 4 basic things**:
 * Move data
 * Do math
 * Compare values
 * Jump to another instruction
 
-# That’s it. Everything else (games, AI, browsers) is built from these...
+That’s it. Everything else (games, AI, browsers) is built from these.
 
 ---
 
 🧠 CPU Example (Human analogy)
-
 Imagine a worker who:
 * Can only read **one sentence at a time**
 * Has a **tiny notebook** (registers)
 * Follows instructions **literally**
 * Never asks *why*
 
-Example instruction;
+Example instruction:
 > “Add the number in box A to the number in box B”
 
 The CPU:
@@ -51,7 +38,6 @@ The CPU:
 ---
 
 🔩 Parts of the CPU (with examples)
-
 1. Registers
 * Smallest & fastest memory
 * Inside the CPU
@@ -64,7 +50,8 @@ Example:
 
 ---
 
-2. ALU (Arithmetic Logic Unit) Does:
+2. ALU (Arithmetic Logic Unit)
+Does:
 * Math: `+ - × ÷`
 * Logic: `AND OR NOT`
 * Comparisons: `> < ==`
@@ -77,7 +64,8 @@ This is how `if` statements work later.
 
 ---
 
-3. Control Unit: The boss of the CPU;
+3. Control Unit
+The boss of the CPU:
 * Tells ALU what to do
 * Tells registers what to load
 * Decides which instruction comes next
@@ -88,8 +76,7 @@ Example:
 ---
 
 2️⃣ What is RAM? (Detailed)
-
-📌 Definition
+### 📌 Definition
 **RAM (Random Access Memory)** is:
 * Temporary memory
 * Where programs **live while running**
@@ -99,7 +86,8 @@ When power is off → RAM is **empty**.
 
 ---
 
-🧠 RAM Example (Desk analogy): Think of RAM as a **desk**;
+🧠 RAM Example (Desk analogy)
+Think of RAM as a **desk**:
 * You put books (programs) on it
 * You open pages (instructions)
 * You remove books when done
@@ -125,19 +113,20 @@ If you open a calculator:
 
 ---
 
-⚡ Why RAM is needed:
+⚡ Why RAM is needed
 CPU is **extremely fast**
 Disk is **very slow**
+
 If CPU waited for disk:
-  * Computer would feel frozen
+* Computer would feel frozen
 
 So:
 > CPU only works with **RAM**
 
 ---
 
-3️⃣ What is a Program? (Concrete)
-📌 Definition
+## 3️⃣ What is a Program? (Concrete)
+### 📌 Definition
 A program is:
 * A **list of instructions**
 * Stored on disk
@@ -148,12 +137,9 @@ At the lowest level:
 > A program = **numbers**
 
 Example:
-
-```
 10101101
 00010110
 11001001
-```
 
 Each number = one instruction.
 
@@ -162,7 +148,6 @@ Each number = one instruction.
 🧠 Program Example (Simple task)
 Task:
 > “Add two numbers and show result”
-
 Steps:
 1. Load first number
 2. Load second number
@@ -186,12 +171,14 @@ Let’s say you click **Run Calculator**.
 
 ---
 
-🧠 Step 2: Operating System steps in The OS:
+🧠 Step 2: Operating System steps in
+The OS:
 * Finds the program file
 * Reserves space in RAM
 * Loads program into RAM
 
 Example:
+
 > Calculator.exe → RAM address 0x400000
 
 ---
@@ -257,12 +244,6 @@ On paper, write:
 Don’t aim for perfection. Aim for **understanding**.
 
 ---
-
-Do
-Draw (on paper) CPU ↔ RAM
-Write: “What happens when I run a program?”
-No code today
-
 
 
 
