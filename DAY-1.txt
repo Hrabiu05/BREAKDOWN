@@ -6,10 +6,6 @@ Learn
 What is a CPU?
 What is RAM?
 What is a program?
-Do
-Draw (on paper) CPU ↔ RAM
-Write: “What happens when I run a program?”
-No code today
 
 *********************************************************************************************************************************************************
 
@@ -261,6 +257,15 @@ On paper, write:
 Don’t aim for perfection. Aim for **understanding**.
 
 ---
+
+Do
+Draw (on paper) CPU ↔ RAM
+Write: “What happens when I run a program?”
+No code today
+
+
+
+
 
 
 
