@@ -1,0 +1,146 @@
+🟢 DAY 12 — ALGORITHMS
+
+**How programs solve problems efficiently**
+
+### Today’s goal
+
+Understand:
+
+* What an algorithm really is
+* Why efficiency matters
+* Conceptual examples: search, sort, and basic logic
+* How data structures + algorithms work together
+
+No coding yet — just thinking.
+
+---
+
+1️⃣ What Is an Algorithm?
+
+An **algorithm** = a **step-by-step recipe** to solve a problem.
+
+Key points:
+
+* Input → Steps → Output
+* Must **terminate** (not infinite)
+* Must be **correct** and ideally **efficient**
+
+Analogy:
+
+* Recipe for cooking
+* Directions for a robot
+* Instructions for assembling IKEA furniture
+
+---
+
+2️⃣ Why Efficiency Matters
+
+Efficiency affects:
+
+* CPU cycles
+* Memory usage
+* User experience
+
+Example:
+
+* Searching a list of 10 items → fast
+* Searching a list of 10 million → slow if unoptimized
+
+---
+
+3️⃣ Searching Example
+
+### Linear Search
+
+* Check each element sequentially
+* Simple, slow for large data
+
+Analogy:
+
+> Looking for a book by flipping each page
+
+---
+
+### Binary Search (with sorted data)
+
+* Check middle element
+* Decide left/right half
+* Repeat
+
+Analogy:
+
+> Opening dictionary to the middle, then left or right
+
+Much faster.
+
+---
+
+4️⃣ Sorting Example
+
+Why sort?
+
+* Makes search faster
+* Organizes output
+
+Common strategies (conceptual):
+
+* Bubble sort → simple, slow
+* Quick sort → clever divide-and-conquer
+* Merge sort → splits, sorts, merges
+
+---
+
+5️⃣ Algorithms + Data Structures
+
+Data structures + algorithms = **power combo**
+
+Example:
+
+* Dictionary (hash table) → fast search
+* Array → fast access by index
+* Stack → easy undo operations
+
+Wrong structure → slow algorithm
+
+---
+
+6️⃣ Real-World Analogy
+
+Problem: Find your friend in a city
+
+* Algorithm: Walk street by street (linear) or use GPS directions (optimized)
+* Data structure: Street map (organized), list of houses (unordered)
+* Efficiency = time to find friend
+
+---
+
+7️⃣ Mental Model
+
+> Algorithm = *how you use your tools (data)* to get results
+> Data structure = *how you store your tools*
+
+CPU executes instructions → algorithms tell it what instructions to run.
+
+---
+
+✏️ DO (Paper Task)
+
+1. Write:
+
+* Algorithm = ?
+* Why efficiency matters = ?
+
+2. Draw:
+
+* Linear search vs binary search conceptually
+
+3. Explain in your own words:
+
+> Why using the right data structure improves algorithm speed
+
+---
+
+
+
+
+
