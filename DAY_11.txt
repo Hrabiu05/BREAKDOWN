@@ -1,0 +1,138 @@
+🟢 DAY 11 — DATA STRUCTURES
+
+**How programs organize data**
+
+### Today’s goal
+
+Understand:
+
+* What a data structure is
+* Why structure matters for speed, memory, and logic
+* Conceptual examples of arrays, lists, stacks, queues, and dictionaries/maps
+* How memory and CPU interact with structured data
+
+No coding yet — pure mental modeling.
+
+---
+
+1️⃣ What Is a Data Structure?
+
+A **data structure** = a way to **organize and store data** so programs can use it efficiently.
+
+Analogy:
+
+* Shelf (array)
+* Stack of plates (stack)
+* Mailbox system (queue)
+* Dictionary (lookup table)
+
+---
+
+2️⃣ Arrays (Sequential Storage)
+
+* Continuous memory locations
+* Fast to access by index
+* Fixed size (mostly)
+
+Example:
+
+```
+Numbers: [10, 20, 30, 40]
+```
+
+* Index 0 → 10
+* Index 1 → 20
+
+CPU can jump directly → very fast.
+
+---
+
+3️⃣ Linked Lists (Sequential but Flexible)
+
+* Each element points to the next
+* Easy to insert/delete
+* Slower to access by index
+
+Analogy:
+
+* Treasure hunt: “Go to first → follow pointer → next → next…”
+
+---
+
+4️⃣ Stack (LIFO)
+
+* Last In, First Out
+* Think: plates in a cafeteria
+* Used for:
+
+  * Function calls
+  * Undo operations
+
+---
+
+5️⃣ Queue (FIFO)
+
+* First In, First Out
+* Think: line at a checkout
+* Used for:
+
+  * Task scheduling
+  * Print jobs
+  * Network packets
+
+---
+
+6️⃣ Dictionaries / Maps
+
+* Key → Value pairing
+* Very fast lookup
+* Analogy:
+
+  * Phonebook: “Name → Number”
+  * Computer stores memory addresses as keys
+
+---
+
+7️⃣ Why Structure Matters
+
+* CPU reads memory
+* Cache works better with predictable layout
+* Algorithm speed depends on how data is organized
+
+Example:
+
+* Searching unsorted list → slow
+* Searching dictionary → fast
+
+---
+
+8️⃣ Mental Model
+
+> Organizing data properly = telling the CPU **where and how to look** efficiently.
+
+---
+
+✏️ DO (Paper Task)
+
+1. Write:
+
+* Data structure = ?
+
+2. List examples:
+
+* Array
+* Stack
+* Queue
+* Map
+
+3. Draw a stack and queue with 3 items each
+4. Explain:
+
+> Why is a dictionary lookup faster than scanning an array?
+
+---
+
+
+
+
+
