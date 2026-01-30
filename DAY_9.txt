@@ -1,0 +1,149 @@
+🟢 DAY 9 — PERFORMANCE
+
+**Why some programs are fast and others are slow**
+
+### Today’s goal
+
+Understand:
+
+* What “performance” actually means
+* Where time is really spent
+* The real bottlenecks in programs
+* Why hardware doesn’t magically save bad logic
+
+Still no code. Just sharp thinking.
+
+---
+
+1️⃣ What Is Performance?
+
+Performance = **how efficiently resources are used**
+
+Resources:
+
+* CPU time
+* Memory
+* Disk I/O
+* Network I/O
+
+Fast ≠ just CPU speed.
+
+---
+
+2️⃣ The Big Lie
+
+> “My computer is slow.”
+
+Reality:
+
+> The program is inefficient.
+
+Hardware only amplifies or hides problems.
+
+---
+
+3️⃣ Where Programs Actually Spend Time
+
+Most time is spent:
+
+* Waiting (I/O)
+* Accessing memory
+* Repeating unnecessary work
+
+CPU math is often the **smallest** cost.
+
+---
+
+4️⃣ CPU Is Not the Main Bottleneck (Usually)
+
+CPUs are extremely fast.
+
+Slower things:
+
+* RAM access
+* Disk access
+* Network
+
+Orders of magnitude slower.
+
+---
+
+5️⃣ Memory Access Matters (A Lot)
+
+Accessing:
+
+* Registers → instant
+* Cache → very fast
+* RAM → slower
+* Disk → painfully slow
+
+Good programs:
+
+* Use memory efficiently
+* Avoid unnecessary data movement
+
+---
+
+6️⃣ Algorithms Matter More Than Hardware
+
+Example:
+
+* Bad algorithm on fast CPU → slow
+* Good algorithm on slow CPU → fast
+
+Repeating work kills performance.
+
+---
+
+7️⃣ I/O Is the Silent Killer
+
+Reading files, waiting for user, network calls:
+
+* CPU often sits idle
+* Program waits
+
+This is why async and batching exist.
+
+---
+
+8️⃣ Multitasking ≠ Parallelism
+
+* Multitasking = switching
+* Parallelism = true simultaneous work
+
+More threads ≠ faster by default.
+
+---
+
+9️⃣ Mental Model (Very Important)
+
+> Performance is about **doing less work**, not working faster.
+
+---
+
+✏️ DO (Paper Task)
+
+1. Write:
+
+* Performance = ?
+
+2. Rank from fastest to slowest:
+
+   * CPU register
+   * RAM
+   * Disk
+   * Network
+3. Answer:
+
+> Why can a fast CPU still feel slow?
+
+---
+
+🧠 Lock-in Thought
+
+> Efficiency beats power.
+
+---
+
+
+
