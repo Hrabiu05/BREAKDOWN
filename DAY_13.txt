@@ -1,0 +1,129 @@
+🟢 DAY 13 — MEMORY HIERARCHY & CACHES
+
+**Why some programs feel instant and others lag**
+
+### Today’s goal
+
+Understand:
+
+* How CPU accesses memory at different speeds
+* What caches are and why they matter
+* Why data placement affects performance
+* How programs naturally “feel fast” or “slow”
+
+Still no coding. Pure systems thinking.
+
+---
+
+1️⃣ Memory Is Not Equal
+
+Different memory types:
+
+| Memory Type | Speed     | Size   | Cost           |
+| ----------- | --------- | ------ | -------------- |
+| Registers   | Fastest   | Tiny   | Built into CPU |
+| Cache       | Very fast | Small  | CPU adjacent   |
+| RAM         | Fast      | Medium | Cheap          |
+| Disk/SSD    | Slow      | Large  | Cheapest       |
+| Network     | Very slow | Huge   | Expensive      |
+
+---
+
+2️⃣ Why This Matters
+
+CPU can do billions of instructions per second, but:
+
+* Fetching from RAM = hundreds of cycles
+* Fetching from disk = millions of cycles
+
+If the CPU waits, the program feels slow.
+
+---
+
+3️⃣ What Is Cache?
+
+**Cache** = tiny, fast memory **close to the CPU**.
+
+* Stores frequently used data
+* Reduces need to access slower RAM
+* Managed automatically by hardware
+
+---
+
+### Analogy
+
+* Registers = tools in your hand
+* Cache = desk drawer
+* RAM = bookshelf
+* Disk = warehouse
+
+CPU always grabs tools from **closest available place**.
+
+---
+
+4️⃣ Cache Levels
+
+* L1 = fastest, smallest, inside CPU
+* L2 = bigger, slightly slower
+* L3 = bigger still, shared in multi-core CPUs
+
+Programs that access memory **predictably** benefit most from caches.
+
+---
+
+5️⃣ Locality Principle
+
+Two types:
+
+1. **Temporal locality**
+
+   * If used once, likely used again soon
+   * Example: Loop counter
+
+2. **Spatial locality**
+
+   * If one memory cell is used, nearby cells likely used
+   * Example: Array traversal
+
+Programs that exploit locality → faster
+
+---
+
+6️⃣ Why Programs Lag
+
+* Random memory access → cache misses → CPU waits
+* Large datasets → RAM swaps to disk → noticeable lag
+* Poor algorithm + bad data layout → magnified delays
+
+---
+
+7️⃣ Mental Model
+
+> CPU speed is meaningless without memory harmony
+> Cache = “fast lane” for instructions and data
+
+---
+
+✏️ DO (Paper Task)
+
+1. Draw memory hierarchy:
+
+```
+Registers → Cache → RAM → Disk → Network
+```
+
+2. Write:
+
+* Temporal locality = ?
+* Spatial locality = ?
+
+3. Answer:
+
+> Why can a simple loop feel instant, but random access feel slow?
+
+---
+
+
+
+
+
