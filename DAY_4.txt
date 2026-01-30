@@ -1,0 +1,217 @@
+🟢 DAY 4 — HOW PROGRAMS USE MEMORY
+
+**Stack, Heap, Variables, and Lifetime**
+
+### Today’s goal
+
+Understand:
+
+* What a **variable** really is
+* How memory is **organized**
+* What **stack** and **heap** mean
+* Why memory bugs exist
+
+Still no coding. Pure clarity.
+
+---
+
+1️⃣ What is a Variable (Really)?
+
+A **variable** is NOT a name.
+
+A variable is:
+
+> **A reserved location in memory (RAM)**
+
+The name is for **humans only**.
+
+---
+
+### Example
+
+You write:
+
+```
+x = 5
+```
+
+What actually happens:
+
+* RAM location reserved
+* Value `5` stored there
+* Name `x` points to that address
+
+CPU never sees `x`.
+
+---
+
+2️⃣ Memory Layout of a Running Program
+
+When a program runs, RAM is divided into regions:
+
+```
++------------------+
+| Program Code     |
++------------------+
+| Stack            |
++------------------+
+| Heap             |
++------------------+
+```
+
+Each has a job.
+
+---
+
+3️⃣ The Stack (Automatic Memory)
+
+📌 What is the Stack?
+
+* Fast
+* Organized (LIFO)
+* Used for:
+
+  * Function calls
+  * Local variables
+  * Return addresses
+
+---
+
+🧠 Stack Example (Plates)
+
+Plates stacked:
+
+* Add plate → on top
+* Remove plate → from top
+
+You can’t pull from the middle.
+
+---
+
+### Function Example (Conceptual)
+
+When a function runs:
+
+1. Space is reserved on stack
+2. Local variables live there
+3. Function finishes
+4. Stack space is released automatically
+
+This is why local variables **disappear**.
+
+---
+
+4️⃣ The Heap (Dynamic Memory)
+
+📌 What is the Heap?
+
+* Flexible
+* Slower than stack
+* Used for:
+
+  * Objects
+  * Large data
+  * Dynamic lifetime
+
+Heap memory stays until:
+
+* Program frees it
+* Or garbage collector runs
+
+---
+
+🧠 Heap Example
+
+Think:
+
+* Warehouse
+* You ask for space
+* You must give it back
+
+If you don’t → memory leak.
+
+---
+
+5️⃣ Stack vs Heap (Clear Comparison)
+
+| Stack     | Heap        |
+| --------- | ----------- |
+| Fast      | Slower      |
+| Automatic | Manual / GC |
+| Small     | Large       |
+| Temporary | Long-lived  |
+
+---
+
+6️⃣ What Happens During a Function Call?
+
+1. Function called
+2. Stack frame created
+3. Local variables stored
+4. Function executes
+5. Return value passed back
+6. Stack frame destroyed
+
+This happens **constantly**.
+
+---
+
+7️⃣ Why Memory Bugs Exist
+
+Because:
+
+* Stack memory disappears
+* Heap memory can be mismanaged
+
+Examples:
+
+* Using memory after it's gone
+* Forgetting to free memory
+* Overwriting memory
+
+High-level languages protect you.
+Low-level languages expose you.
+
+---
+
+8️⃣ Big Mental Model (Very Important)
+
+> **The stack is about structure.**
+> **The heap is about freedom.**
+
+---
+
+✏️ DO (Paper Task)
+
+1. Draw:
+
+```
+Program Memory
+ ├─ Code
+ ├─ Stack
+ └─ Heap
+```
+
+2. Write:
+
+* Stack = ?
+* Heap = ?
+
+3. Answer:
+
+> Why do local variables disappear?
+
+---
+
+🧠 Lock-in Thought
+
+> Memory is not infinite.
+> Understanding memory = understanding performance & bugs.
+
+---
+
+
+
+
+
+
