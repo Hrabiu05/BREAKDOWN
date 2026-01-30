@@ -1,0 +1,223 @@
+🟢 DAY 6 — WHAT AN OPERATING SYSTEM REALLY DOES
+
+**The boss of all programs**
+
+### Today’s goal
+
+Understand:
+
+* Why the OS exists
+* What problems it solves
+* How it controls CPU, memory, and programs
+* What *really* happens when multiple programs run
+
+Still no coding. Systems thinking.
+
+---
+
+1️⃣ Why an Operating System Exists
+
+Imagine:
+
+* No OS
+* Programs talk directly to hardware
+
+Problems:
+
+* Programs overwrite each other’s memory
+* Multiple programs fight for CPU
+* Anyone can crash the machine
+* No security
+
+So we need a **manager**.
+
+---
+
+2️⃣ What Is an Operating System?
+
+An **Operating System (OS)** is:
+
+> A program that manages **hardware** and **other programs**
+
+Examples:
+
+* Windows
+* Linux
+* macOS
+* Android
+
+The OS:
+
+* Starts first
+* Never stops (until shutdown)
+* Controls access to hardware
+
+---
+
+3️⃣ Core Responsibilities of an OS
+
+### 🔹 1. Process Management (CPU control)
+
+CPU can run **one thing at a time per core**.
+
+OS creates the illusion of multitasking by:
+
+* Giving each process a tiny time slice
+* Switching very fast
+
+This is called **context switching**.
+
+---
+
+🧠 Example
+
+You:
+
+* Listen to music
+* Browse web
+* Chat
+
+CPU:
+
+* Music (2 ms)
+* Browser (2 ms)
+* Chat (2 ms)
+* Repeat
+
+Feels simultaneous.
+
+---
+
+4️⃣ Memory Management
+
+OS:
+
+* Gives each program its own memory space
+* Prevents programs from touching others
+
+This is why:
+
+* One app crashing ≠ system crash
+
+Virtual memory makes programs think:
+
+> “I own the whole memory.”
+
+They don’t.
+
+---
+
+5️⃣ File System Management
+
+OS:
+
+* Organizes disk into files & folders
+* Controls read/write access
+* Keeps track of locations
+
+Programs never talk to disk directly.
+They ask the OS.
+
+---
+
+6️⃣ Hardware Abstraction
+
+Hardware is messy.
+
+OS provides:
+
+* Simple interfaces
+* Drivers for hardware
+
+Example:
+
+> Program says: “Print this”
+> OS figures out **how**.
+
+---
+
+7️⃣ Security & Permissions
+
+OS decides:
+
+* Who can run what
+* Who can access which files
+* What needs admin rights
+
+This protects:
+
+* System
+* User
+* Data
+
+---
+
+8️⃣ User Space vs Kernel Space
+
+### User Space
+
+* Normal programs
+* Limited power
+* Can’t touch hardware directly
+
+### Kernel Space
+
+* OS core
+* Full access
+* Dangerous if broken
+
+System calls are the bridge.
+
+---
+
+9️⃣ What Happens When You Run a Program (OS View)
+
+1. You click program
+2. OS checks permissions
+3. OS allocates memory
+4. OS loads program
+5. OS schedules CPU time
+6. Program runs
+7. OS cleans up after exit
+
+OS is always watching.
+
+---
+
+🧠 Mental Model (Critical)
+
+> The OS is a **referee**, not a player.
+
+---
+
+✏️ DO (Paper Task)
+
+1. Write:
+
+* OS = ?
+
+2. List:
+
+* 4 things OS controls
+
+3. Draw:
+
+```
+User Programs
+     ↓
+ Operating System
+     ↓
+ Hardware
+```
+
+---
+
+🧠 Lock-in Thought
+
+> Without an OS, modern computers are chaos.
+
+---
+
+
+
+
