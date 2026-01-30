@@ -1,0 +1,227 @@
+🟢 DAY 3 — PROGRAMS, LANGUAGES & COMPILERS
+
+**How human ideas become CPU instructions**
+
+### Today’s goal
+
+Understand:
+
+* What a **programming language** is
+* Why CPUs don’t understand Python/Java/C++
+* What a **compiler** and **interpreter** do
+* How code turns into machine instructions
+
+Still no coding yet — just mental clarity.
+
+---
+
+1️⃣ Why We Need Programming Languages
+
+### Reality check
+
+The CPU understands only:
+
+```
+10101010
+00011100
+```
+
+Humans don’t.
+
+So we invented **languages** that are:
+
+* Easier to read
+* Easier to write
+* Less error-prone
+
+Example (human idea):
+
+> “Add two numbers”
+
+---
+
+2️⃣ High-Level vs Low-Level Languages
+
+#🧠 Low-Level Languages
+
+Close to the CPU.
+
+Examples:
+
+* Machine code
+* Assembly
+
+Pros:
+
+* Very fast
+* Full control
+
+Cons:
+
+* Hard to write
+* Easy to mess up
+
+---
+
+🧠 High-Level Languages
+
+Close to human thinking.
+
+Examples:
+
+* Python
+* Java
+* C++
+* JavaScript
+
+Pros:
+
+* Easy to read
+* Faster to write
+
+Cons:
+
+* Need translation
+
+---
+
+3️⃣ The Big Truth
+
+> **The CPU does NOT understand programming languages.**
+
+It only understands **machine code**.
+
+So something must translate.
+
+---
+
+4️⃣ What is a Compiler?
+
+A **compiler**:
+
+* Takes your code
+* Translates it into machine code
+* Saves it as a program file
+
+Example flow:
+
+```
+C++ code → Compiler → Machine code → Program
+```
+
+When you run it:
+
+* OS loads machine code into RAM
+* CPU executes directly
+
+Fast.
+
+---
+
+5️⃣ What is an Interpreter?
+
+An **interpreter**:
+
+* Reads your code
+* Translates it **line by line**
+* Executes immediately
+
+Example flow:
+
+```
+Python code → Interpreter → CPU
+```
+
+Slower, but flexible.
+
+---
+
+6️⃣ Hybrid Languages (Real World)
+
+Many modern languages do both.
+
+Example:
+
+* Java → compiled to bytecode → interpreted by JVM
+* Python → compiled to bytecode → interpreted
+
+You don’t need details yet — just the idea.
+
+---
+
+7️⃣ Example: One Idea, Three Levels
+
+### Human idea:
+
+> “Add 5 and 3”
+
+### High-level language:
+
+```
+result = 5 + 3
+```
+
+### Assembly (simplified):
+
+```
+LOAD 5
+LOAD 3
+ADD
+STORE result
+```
+
+### Machine code:
+
+```
+10101100
+00010111
+```
+
+Same idea. Different forms.
+
+---
+
+8️⃣ Where Does the Compiler Live?
+
+* Compiler = a program
+* Stored on disk
+* Runs on CPU
+* Uses RAM
+
+Yes — compilers are just programs too 🤯
+
+---
+
+✏️ DO (Paper Task)
+
+1. Write:
+
+   * CPU understands: ______
+   * Humans write: ______
+2. Draw flow:
+
+```
+Human idea
+   ↓
+Programming language
+   ↓
+Compiler / Interpreter
+   ↓
+Machine code
+   ↓
+CPU
+```
+
+3. Write:
+
+> “A programming language is a tool for humans, not CPUs.”
+
+---
+
+🧠 Lock-in Thought
+
+> Code is not magic.
+> It’s just **translated instructions**.
+
+---
+
