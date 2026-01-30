@@ -1,0 +1,139 @@
+🟢 DAY 14 — PUTTING IT ALL TOGETHER
+
+**From Click to CPU Cycle**
+
+### Today’s goal
+
+Understand the **end-to-end flow**:
+
+1. User interaction
+2. OS management
+3. Program execution
+4. Memory, cache, CPU execution
+5. Output back to user
+
+No coding, but a full mental map.
+
+---
+
+1️⃣ Step 1: User Clicks / Runs Program
+
+* Program stored on disk
+* User action = signal to OS
+* OS decides: “Can this run? Where will it live in memory?”
+
+---
+
+2️⃣ Step 2: OS Loads Program
+
+* OS allocates memory (stack + heap)
+* OS loads instructions into RAM
+* OS sets up CPU registers, stack pointers, program counter
+
+> Program becomes a **process**
+
+---
+
+3️⃣ Step 3: CPU Fetch–Decode–Execute Cycle
+
+1. **Fetch** instruction from cache or RAM
+2. **Decode** → figure out what it means
+3. **Execute** → ALU does math, memory read/write, jumps
+
+Repeat billions of times per second.
+
+---
+
+4️⃣ Step 4: Memory Access
+
+* CPU uses **registers** → fastest
+* L1/L2/L3 cache → very fast
+* RAM → slower
+* Disk → slowest (swap happens rarely but noticeable)
+
+Programs that are memory-friendly = faster
+
+---
+
+5️⃣ Step 5: Input & Output
+
+* Program requests input → OS handles keyboard/mouse/network
+* Program outputs → OS sends to screen, audio, files
+
+All hardware access = mediated by OS
+
+---
+
+6️⃣ Step 6: Control Flow & Decisions
+
+* IF/ELSE → CPU compares + jumps
+* Loops → repeated fetch-decode-execute
+* Functions → stack frames created/destroyed
+
+Every high-level construct = literal instructions and memory moves
+
+---
+
+7️⃣ Step 7: Multitasking / Parallelism
+
+* OS switches CPU time between processes
+* Each process has isolated memory
+* Context switches save CPU state + registers
+
+Feels simultaneous, but CPU only executes 1 instruction per core at a time
+
+---
+
+8️⃣ Step 8: Program Ends
+
+* CPU hits STOP instruction
+* OS cleans up memory (stack + heap)
+* Resources released (files, sockets, threads)
+* Process disappears → CPU ready for next task
+
+---
+
+9️⃣ Mental Model — Everything Together
+
+```
+User Click
+     ↓
+Operating System
+     ↓
+Program Loaded (Stack + Heap)
+     ↓
+CPU Fetch–Decode–Execute
+     ↓
+Memory & Cache Access
+     ↓
+Decisions / Loops / Function Calls
+     ↓
+Input/Output via OS
+     ↓
+Result back to User
+```
+
+> Every program = *obedient, literal instructions moving data in memory under OS supervision*
+
+---
+
+✏️ DO (Paper Task)
+
+1. Draw the full flow above
+2. Label: CPU, RAM, Cache, OS, Program, I/O
+3. Explain in one sentence:
+
+> Why a program can feel “fast” or “slow”
+
+---
+
+🧠 Lock-in Thought
+
+> A computer is a giant pipeline: **you click → OS manages → CPU executes → memory + cache flow → output appears**
+
+Now you can literally **visualize everything a program does** from click to CPU cycle.
+
+---
+
+
+
