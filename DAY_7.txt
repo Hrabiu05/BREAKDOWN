@@ -1,0 +1,233 @@
+🟢 DAY 7 — HOW SOFTWARE COMMUNICATES
+
+**Input, Output, and the real world**
+
+### Today’s goal
+
+Understand:
+
+* What **Input** and **Output (I/O)** really mean
+* How keyboard, mouse, screen, disk, and network fit in
+* Why programs never talk to hardware directly
+* How data flows in and out of a program
+
+Still no coding. Still mental models.
+
+---
+
+1️⃣ What Is Input / Output (I/O)?
+
+**Input** = data going **into** a program
+**Output** = data coming **out** of a program
+
+That’s it. Everything else is detail.
+
+---
+
+### Examples
+
+* Keyboard → program = **input**
+* Mouse click → program = **input**
+* Screen display ← program = **output**
+* File read → program = **input**
+* File save ← program = **output**
+* Internet data both ways = **I/O**
+
+---
+
+2️⃣ Programs Are Isolated (Important)
+
+A normal program:
+
+* Cannot touch hardware directly
+* Cannot read keyboard directly
+* Cannot write to screen directly
+
+Why?
+
+* Safety
+* Stability
+* Security
+
+So who helps?
+👉 **The Operating System**
+
+---
+
+3️⃣ The OS as the Middleman
+
+Flow looks like this:
+
+```
+Hardware ↔ OS ↔ Program
+```
+
+Examples:
+
+* Keyboard sends signal → OS → program
+* Program wants to print → OS → screen
+* Program wants file → OS → disk
+
+Programs **ask**, OS **decides**.
+
+---
+
+4️⃣ Input Devices (Conceptual)
+
+### Keyboard
+
+* Each key press = a code
+* OS translates electrical signals → characters
+* Program receives data when it asks
+
+Important:
+
+> Programs don’t “listen” constantly.
+> They **request input**.
+
+---
+
+### Mouse
+
+* Sends movement + clicks
+* OS tracks position
+* Program gets events like:
+
+  * click
+  * move
+  * scroll
+
+---
+
+5️⃣ Output Devices
+
+### Screen
+
+Program says:
+
+> “Draw this pixel / text / window”
+
+OS + graphics system:
+
+* Handle resolution
+* Handle refresh rate
+* Handle hardware details
+
+---
+
+### Sound
+
+Program:
+
+> “Play this sound”
+
+OS:
+
+* Sends data to audio driver
+* Manages volume & mixing
+
+---
+
+6️⃣ Files Are Also I/O
+
+Reading a file:
+
+* Disk → OS → program
+
+Writing a file:
+
+* Program → OS → disk
+
+Programs never know:
+
+* Where the file physically is
+* How the disk works
+
+Abstraction again.
+
+---
+
+7️⃣ Blocking vs Non-Blocking (Conceptual)
+
+### Blocking I/O
+
+Program:
+
+* Asks for input
+* Waits
+* Does nothing else
+
+Example:
+
+> “Wait for user to type”
+
+---
+
+### Non-Blocking / Event-Based
+
+Program:
+
+* Continues running
+* OS notifies when input arrives
+
+Used in:
+
+* Games
+* GUIs
+* Servers
+
+---
+
+8️⃣ Networking Is Just I/O
+
+Internet = input/output with another computer.
+
+Program:
+
+* Sends bytes
+* Receives bytes
+
+Everything else (HTTP, chat, video) is **structure on top**.
+
+---
+
+🧠 Big Mental Model
+
+> Programs live in a box.
+> The OS controls the doors.
+
+---
+
+✏️ DO (Paper Task)
+
+1. Write:
+
+* Input = ?
+* Output = ?
+
+2. List:
+
+* 3 input devices
+* 3 output devices
+
+3. Draw:
+
+```
+Program ↔ OS ↔ Hardware
+```
+
+4. Answer:
+
+> Why can’t programs access hardware directly?
+
+---
+
+🧠 Lock-in Thought
+
+> Communication is controlled, not free.
+
+---
+
+
+
+
