@@ -1,0 +1,137 @@
+🟢 DAY 10 — HOW SOFTWARE FAILS
+
+**Bugs, crashes, and errors**
+
+### Today’s goal
+
+Understand:
+
+* Why programs crash
+* The difference between bugs, errors, and exceptions
+* How hardware, OS, and logic interact in failures
+* Why debugging is thinking, not guessing
+
+No coding yet — purely conceptual.
+
+---
+
+1️⃣ What Is a Bug?
+
+A **bug** = a mistake in the program
+
+Types:
+
+* **Logic bug**: wrong calculation or condition
+* **Memory bug**: accessing memory incorrectly
+* **Resource bug**: not releasing files, sockets, memory
+
+All bugs exist **at the CPU/OS/memory level** eventually.
+
+---
+
+2️⃣ Why Programs Crash
+
+Crash = program stops unexpectedly
+
+Reasons:
+
+* Accessing memory it shouldn’t (segmentation fault)
+* Dividing by zero
+* File/network not found
+* Running out of resources (memory/disk)
+
+CPU cannot “guess” — it obeys literally.
+
+---
+
+3️⃣ Exceptions and Errors
+
+OS and languages provide **signals or exceptions**:
+
+* **Error** = something went wrong
+* **Exception** = OS/language notifying program about the error
+* **Crash** = unhandled exception → program stops
+
+Example:
+
+* Python: dividing by zero → `ZeroDivisionError`
+* C: dividing by zero → CPU trap → crash
+
+---
+
+4️⃣ Hardware Can Cause Failures
+
+* RAM errors → program corrupts data
+* Disk failure → files disappear
+* CPU overheating → system crash
+
+Program failure = combination of **software + hardware + OS**.
+
+---
+
+5️⃣ Race Conditions (Advanced Conceptual)
+
+Multiple processes/threads:
+
+* Access same resource at once
+* CPU executes instructions in unexpected order
+* Program misbehaves
+
+This is why **coordination and locks** exist.
+
+---
+
+6️⃣ Memory Leaks
+
+* Heap memory allocated → never freed
+* Over time → program uses more memory
+* Can crash system or slow it down
+
+---
+
+7️⃣ Infinite Loops
+
+* Loop never ends
+* CPU keeps running → program hangs
+* Often combined with memory or I/O issues
+
+---
+
+8️⃣ Mental Model
+
+> A crash is not magic.
+> It’s a **violation of the CPU/OS/memory rules**.
+> Debugging = finding which rule was broken.
+
+---
+
+✏️ DO (Paper Task)
+
+1. Write:
+
+* Bug = ?
+* Crash = ?
+* Exception = ?
+
+2. List 3 common reasons programs fail
+3. Draw:
+
+```
+Program → OS → Hardware
+        ↑ crash/error signal
+```
+
+---
+
+🧠 Lock-in Thought
+
+> Programs fail because computers are **stupid but literal**.
+> Understanding that literally = understanding bugs.
+
+---
+
+
+
+
+
+You’re doing exceptionally well.
