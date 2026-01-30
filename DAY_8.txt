@@ -1,0 +1,206 @@
+🟢 DAY 8 — HOW PROGRAMS COMMUNICATE WITH EACH OTHER
+
+**Processes, messages, and coordination**
+
+### Today’s goal
+
+Understand:
+
+* What a **process** really is
+* Why programs are isolated
+* How programs safely communicate
+* The main communication methods (conceptual)
+
+Still no code. Still architecture.
+
+---
+
+## 1️⃣ What Is a Process?
+
+A **program** is a file on disk.
+A **process** is a program **in execution**.
+
+When you run a program:
+
+* OS creates a process
+* Gives it:
+
+  * Memory
+  * CPU time
+  * An ID (PID)
+
+Each process thinks:
+
+> “I’m alone.”
+
+It’s not.
+
+---
+
+## 2️⃣ Why Processes Are Isolated
+
+Isolation prevents:
+
+* Crashes spreading
+* Data corruption
+* Security issues
+
+If one process breaks:
+
+* OS can kill it
+* Others survive
+
+This is one of the OS’s biggest jobs.
+
+---
+
+3️⃣ But Programs Must Communicate
+
+Examples:
+
+* Browser ↔ network service
+* App ↔ database
+* Music app ↔ audio system
+
+So we need **controlled channels**.
+
+---
+
+4️⃣ Inter-Process Communication (IPC)
+
+IPC = safe ways for processes to talk.
+
+OS provides these.
+
+---
+
+5️⃣ Common IPC Methods (Conceptual)
+
+🔹 1. Pipes
+
+* One process writes
+* Another reads
+* One-directional
+
+Example:
+
+```
+Program A → Pipe → Program B
+```
+
+Used heavily in Linux.
+
+---
+
+🔹 2. Shared Memory
+
+* Two processes share a memory region
+* Very fast
+* Requires coordination
+
+OS sets rules.
+
+---
+
+🔹 3. Messages / Queues
+
+* Processes send messages
+* OS delivers them
+* Decoupled
+
+Think:
+
+> Mailboxes
+
+---
+
+🔹 4. Signals
+
+* Simple notifications
+* “Hey, stop”
+* “Hey, reload”
+
+Very lightweight.
+
+---
+
+🔹 5. Sockets (Important)
+
+* Used for networking
+* Works locally and over internet
+
+Browser ↔ Server = socket communication.
+
+---
+
+6️⃣ Client–Server Model
+
+Very common pattern.
+
+* Client asks
+* Server responds
+
+Examples:
+
+* Browser → website
+* App → database
+* Game → game server
+
+Even on the same machine.
+
+---
+
+7️⃣ Why the OS Is Always Involved
+
+Processes never:
+
+* Share memory freely
+* Talk directly
+
+OS:
+
+* Creates channels
+* Enforces rules
+* Prevents abuse
+
+---
+
+8️⃣ Mental Model (Critical)
+
+> Processes are strangers.
+> The OS is the trusted mediator.
+
+---
+
+✏️ DO (Paper Task)
+
+1. Write:
+
+* Program = ?
+* Process = ?
+
+2. Draw:
+
+```
+Process A → OS → Process B
+```
+
+3. List:
+
+* 3 ways programs can communicate
+
+4. Answer:
+
+> Why is direct memory sharing dangerous?
+
+---
+
+🧠 Lock-in Thought
+
+> Cooperation requires rules.
+
+---
+
+
+
+
