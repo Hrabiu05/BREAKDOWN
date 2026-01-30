@@ -1,0 +1,193 @@
+🟢 DAY 5 — CONTROL FLOW
+
+**How programs choose, repeat, and branch**
+
+### Today’s goal
+
+Understand:
+
+* How **IF** works at the CPU level
+* How **loops** really work
+* What **conditions** mean in binary
+* Why all logic reduces to comparisons + jumps
+
+Still no coding yet — but this is where programs start to feel “alive”.
+
+---
+
+1️⃣ The CPU Has No “If”
+
+Important truth:
+
+> The CPU does **not** understand `if`, `for`, or `while`.
+
+It understands:
+
+* Compare
+* Jump
+
+That’s it.
+
+---
+
+2️⃣ What Is a Condition?
+
+A condition is a **comparison**.
+
+Examples:
+
+* Is A > B?
+* Is X == 0?
+* Is value != 10?
+
+The result is:
+
+* TRUE (1)
+* FALSE (0)
+
+Binary. Always.
+
+---
+
+3️⃣ How IF Works (Conceptually)
+
+Human idea:
+
+> If it’s raining, take an umbrella.
+
+CPU version:
+
+1. Compare condition
+2. If false → jump over code
+3. If true → continue
+
+---
+
+### Memory-Level Example
+
+Let’s say:
+
+* A = 5
+* B = 3
+
+CPU does:
+
+1. Load A
+2. Load B
+3. Compare A and B
+4. Set a flag (true/false)
+5. Jump or not
+
+Flags are tiny bits inside CPU registers.
+
+---
+
+4️⃣ What Is a Jump?
+
+A **jump** is:
+
+> “Go execute instructions at another address”
+
+Types:
+
+* Unconditional jump (always go)
+* Conditional jump (go if true / false)
+
+This is how branching works.
+
+---
+
+5️⃣ How Loops Really Work
+
+A loop is just:
+
+> A jump backwards
+
+That’s it.
+
+---
+
+### Loop Example (Conceptual)
+
+Human idea:
+
+> Repeat 5 times
+
+CPU logic:
+
+1. Set counter = 5
+2. Do work
+3. Decrease counter
+4. If counter > 0 → jump back
+5. Else → continue
+
+---
+
+6️⃣ Why Infinite Loops Happen
+
+If:
+
+* Condition never becomes false
+* Jump keeps going back
+
+CPU doesn’t know it’s a mistake.
+It obeys.
+
+---
+
+7️⃣ Everything Reduces to This
+
+All control flow = combinations of:
+
+* Compare
+* Jump
+* Flags
+
+Even:
+
+* Games
+* AI
+* Operating systems
+
+---
+
+8️⃣ Mental Model (Very Important)
+
+> Programs don’t “decide”.
+> They **follow paths** based on data.
+
+---
+
+✏️ DO (Paper Task)
+
+1. Write:
+
+* Condition = ?
+* Jump = ?
+
+2. Draw:
+
+```
+[Compare]
+   ↓
+[Jump if false] → skip
+   ↓
+[Execute code]
+```
+
+3. Explain in your own words:
+
+> How does a loop work internally?
+
+---
+
+🧠 Lock-in Thought
+
+> Intelligence is just structured branching.
+
+---
+
+
+
+
+
