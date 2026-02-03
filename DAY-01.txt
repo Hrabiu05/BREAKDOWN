@@ -1,7 +1,6 @@
 🟢 DAY 1 — HOW A COMPUTER THINKS (DETAILED)
 
 ---
-
 1️⃣ What is a CPU? (Deep but simple)
 📌 Definition
 **CPU (Central Processing Unit)** is the part of the computer that:
@@ -19,7 +18,6 @@ A CPU does **only 4 basic things**:
 That’s it. Everything else (games, AI, browsers) is built from these.
 
 ---
-
 🧠 CPU Example (Human analogy)
 Imagine a worker who:
 * Can only read **one sentence at a time**
@@ -36,7 +34,6 @@ The CPU:
 3. Stores the result back
 
 ---
-
 🔩 Parts of the CPU (with examples)
 1. Registers
 * Smallest & fastest memory
@@ -49,7 +46,6 @@ Example:
 * ALU adds → result = 8
 
 ---
-
 2. ALU (Arithmetic Logic Unit)
 Does:
 * Math: `+ - × ÷`
@@ -63,7 +59,6 @@ Example:
 This is how `if` statements work later.
 
 ---
-
 3. Control Unit
 The boss of the CPU:
 * Tells ALU what to do
@@ -74,7 +69,6 @@ Example:
 > “Instruction 102 says ADD, so send values to ALU”
 
 ---
-
 2️⃣ What is RAM? (Detailed)
 ### 📌 Definition
 **RAM (Random Access Memory)** is:
@@ -85,7 +79,6 @@ Example:
 When power is off → RAM is **empty**.
 
 ---
-
 🧠 RAM Example (Desk analogy)
 Think of RAM as a **desk**:
 * You put books (programs) on it
@@ -97,7 +90,6 @@ RAM = desk
 CPU = reader
 
 ---
-
 📦 What exactly is inside RAM?
 RAM contains:
 1. Program instructions
@@ -112,7 +104,6 @@ If you open a calculator:
 * Result → RAM
 
 ---
-
 ⚡ Why RAM is needed
 CPU is **extremely fast**
 Disk is **very slow**
@@ -124,7 +115,6 @@ So:
 > CPU only works with **RAM**
 
 ---
-
 ## 3️⃣ What is a Program? (Concrete)
 ### 📌 Definition
 A program is:
@@ -144,7 +134,6 @@ Example:
 Each number = one instruction.
 
 ---
-
 🧠 Program Example (Simple task)
 Task:
 > “Add two numbers and show result”
@@ -159,18 +148,15 @@ Steps:
 That’s a full program.
 
 ---
-
 4️⃣ What Happens When I Run a Program? (Step-by-step)
 Let’s say you click **Run Calculator**.
 
 ---
-
 🖱️ Step 1: You click the program
 * Program is on disk (SSD/HDD)
 * Nothing is running yet
 
 ---
-
 🧠 Step 2: Operating System steps in
 The OS:
 * Finds the program file
@@ -182,7 +168,6 @@ Example:
 > Calculator.exe → RAM address 0x400000
 
 ---
-
 📥 Step 3: CPU starts executing
 CPU:
 * Gets the starting address
@@ -191,7 +176,6 @@ CPU:
 This starts the **Fetch–Decode–Execute cycle**.
 
 ---
-
 🔁 Step 4: Fetch–Decode–Execute (CRITICAL)
 Example instruction:
 > “ADD R1, R2”
@@ -205,7 +189,6 @@ CPU does:
 Repeat. Millions of times.
 
 ---
-
 🛑 Step 5: Program ends
 * CPU reaches STOP instruction
 * OS cleans RAM
@@ -214,7 +197,6 @@ Repeat. Millions of times.
 Program is done.
 
 ---
-
 5️⃣ CPU ↔ RAM Interaction (Very clear example)
 Example:
 You type **5 + 3** in calculator.
@@ -229,12 +211,10 @@ You type **5 + 3** in calculator.
 CPU never remembers anything permanently.
 
 ---
-
 🧠 One Sentence That Explains Everything
 > **A computer is a fast worker (CPU) repeatedly reading tiny instructions from a workspace (RAM).**
 
 ---
-
 ✏️ Your Task (Important)
 On paper, write:
 * CPU parts
