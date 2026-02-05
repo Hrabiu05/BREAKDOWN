@@ -1,17 +1,27 @@
-🟢 DAY 3 — HOW PROGRAMS ARE STORED & RUN:
-*(Files → RAM → CPU)*;
+YESSS 🔥
+You’re locked in. Welcome to:
+
+# 🟢 DAY 3 — HOW PROGRAMS ARE STORED & RUN
+
+*(Files → RAM → CPU)*
+
 This day connects **everything** you’ve learned so far.
 I’ll explain **each stage**, with **examples**, slowly and clearly.
 
 ---
-1️⃣ What Is a Program File?:
-📌 Definition;
+
+## 1️⃣ What Is a Program File?
+
+### 📌 Definition
+
 A **program file** is:
+
 * A file stored on disk (SSD/HDD)
 * Contains **instructions + data**
 * **Not running** yet
 
 Examples:
+
 * `calculator.exe`
 * `chrome.exe`
 * `game.app`
@@ -19,88 +29,124 @@ Examples:
 Right now, they are just **bytes on disk**.
 
 ---
-🧠 Important Truth:
+
+### 🧠 Important Truth
+
 > A file on disk does **nothing** by itself.
 > It must be **loaded into RAM** to run.
 
 ---
-🔍 What’s inside a program file?:
-A program file contains;
+
+### 🔍 What’s inside a program file?
+
+A program file contains:
+
 1. Machine instructions (binary)
 2. Metadata (how to load it)
 3. Static data (constants, images, text)
 
 Example (simplified):
+
+```
 [ Header ]
 [ Code ]
 [ Data ]
+```
 
 Still just **0s and 1s**.
 
 ---
-2️⃣ Disk vs RAM (Why Two Places Exist):
-🧱 Disk (SSD/HDD);
+
+## 2️⃣ Disk vs RAM (Why Two Places Exist)
+
+### 🧱 Disk (SSD/HDD)
+
 * Permanent
 * Large
 * Slow
 
-⚡ RAM
+### ⚡ RAM
+
 * Temporary
 * Smaller
 * Extremely fast
 
 ---
-🧠 Example:
+
+### 🧠 Example
+
 Opening a game:
+
 * Disk → stores the game forever
 * RAM → holds the game while playing
 * Close game → RAM is cleared
 
 ---
-3️⃣ The Operating System’s Role (VERY IMPORTANT):
-The **OS** is the boss;
+
+## 3️⃣ The Operating System’s Role (VERY IMPORTANT)
+
+The **OS** is the boss.
+
 When you double-click a program:
+
 1. OS checks permissions
 2. OS allocates RAM
 3. OS loads file into RAM
 4. OS starts the CPU at entry point
 
 Without OS:
+
 > You’d have to do all this manually 😄
 
 ---
-4️⃣ Loading a Program into RAM (Step-by-Step):
-Example: You run **Calculator**;
 
-🖱️ Step 1: Click program:
+## 4️⃣ Loading a Program into RAM (Step-by-Step)
+
+Example: You run **Calculator**
+
+### 🖱️ Step 1: Click program
+
 * File exists on disk
 * OS is notified
 
 ---
-📥 Step 2: OS loads program:
-OS;
+
+### 📥 Step 2: OS loads program
+
+OS:
+
 * Reads program file
 * Copies code into RAM
 * Sets memory layout
 
 Example RAM layout:
+
+```
 Code section
 Data section
 Stack
 Heap
+```
 
 ---
-📍 Step 3: Entry Point:
-The OS tells the CPU;
+
+### 📍 Step 3: Entry Point
+
+The OS tells the CPU:
+
 > “Start executing at address X”
+
 This address is the **first instruction**.
 
 ---
-5️⃣ Memory Layout of a Running Program:
+
+## 5️⃣ Memory Layout of a Running Program
+
 Every running program gets its own memory space.
 
-🧠 Typical layout:
+### 🧠 Typical layout:
 
+```
 +------------------+
 | Code             |
 | (instructions)   |
@@ -114,43 +160,59 @@ Every running program gets its own memory space.
 | Stack            |
 | (functions)      |
 +------------------+
+```
 
 ---
-📌 Stack (Example):
-Used for;
+
+### 📌 Stack (Example)
+
+Used for:
+
 * Function calls
 * Local variables
 * Return addresses
 
 Example:
+
 * Call function A
 * Stack grows
 * Function ends
 * Stack shrinks
 
 ---
-📌 Heap (Example):
-Used for;
+
+### 📌 Heap (Example)
+
+Used for:
+
 * Dynamic data
 * Objects created at runtime
 
 Example:
+
 * Open image
 * Image data stored in heap
 * Close image → freed
 
 ---
-6️⃣ CPU Starts Running the Program:
-Once loaded;
+
+## 6️⃣ CPU Starts Running the Program
+
+Once loaded:
+
 * CPU begins execution
 * One instruction at a time
 
 ---
-🔁 Fetch–Decode–Execute (Again, but in context):
-Example instruction;
+
+### 🔁 Fetch–Decode–Execute (Again, but in context)
+
+Example instruction:
+
 > “LOAD value from address 5000”
 
 CPU:
+
 1. Fetch instruction
 2. Decode operation
 3. Load value into register
@@ -159,23 +221,34 @@ CPU:
 Billions of times per second.
 
 ---
-7️⃣ Instructions vs Data (Critical Concept):
-CPU sees **bytes**;
+
+## 7️⃣ Instructions vs Data (Critical Concept)
+
+CPU sees **bytes**.
+
 How does it know:
+
 * This byte = instruction?
 * That byte = data?
 
 Answer:
+
 > **Context**
+
 * Code section → instructions
 * Data section → values
 
 Same byte, different meaning.
 
 ---
-🧠 Example:
-Byte;
-01000001...
+
+### 🧠 Example
+
+Byte:
+
+```
+01000001
+```
 
 As data → `'A'`
 As instruction → “Move register”
@@ -183,10 +256,13 @@ As instruction → “Move register”
 Meaning depends on **where it is**.
 
 ---
-8️⃣ Multitasking (Why Many Programs Run Together):
+
+## 8️⃣ Multitasking (Why Many Programs Run Together)
+
 The CPU runs **one instruction at a time**.
 
 So how:
+
 * Browser
 * Music
 * Game
@@ -195,8 +271,11 @@ So how:
 All run together?
 
 ---
-⏱️ Answer: Time Slicing:
-OS;
+
+### ⏱️ Answer: Time Slicing
+
+OS:
+
 * Runs Program A for 2 ms
 * Switches to Program B
 * Switches to Program C
@@ -204,16 +283,23 @@ OS;
 So fast it looks simultaneous.
 
 ---
-🧠 Context Switching:
-OS saves;
+
+### 🧠 Context Switching
+
+OS saves:
+
 * CPU registers
 * Program counter
   Then restores another program.
 
 ---
-9️⃣ When a Program Ends:
-Example: Close Calculator;
+
+## 9️⃣ When a Program Ends
+
+Example: Close Calculator
+
 OS:
+
 1. Stops CPU execution
 2. Frees RAM
 3. Cleans resources
@@ -221,7 +307,9 @@ OS:
 File remains on disk.
 
 ---
-🔗 Connect Day 1–3 (Big Picture):
+
+## 🔗 Connect Day 1–3 (Big Picture)
+
 1. Program = bytes on disk
 2. OS loads bytes → RAM
 3. CPU reads bytes
@@ -229,21 +317,31 @@ File remains on disk.
 5. CPU executes → result
 
 ---
-🧠 One Sentence That Explains DAY 3:
+
+## 🧠 One Sentence That Explains DAY 3
+
 > **Programs are files until the OS loads them into RAM and the CPU starts executing their instructions.**
 
 ---
-✏️ Your Task (Paper):
+
+## ✏️ Your Task (Paper)
+
 1. Draw:
+
    * Disk
    * RAM
    * CPU
 2. Show arrows: Disk → RAM → CPU
 3. Label:
+
    * Code
    * Stack
    * Heap
 
 ---
 
+When ready:
+👉 Say **“DAY 3 CLEAR”**
 
+Next 🔥
+🟢 **DAY 4 — WHAT IS AN OPERATING SYSTEM REALLY?**
