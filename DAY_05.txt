@@ -1,193 +1,337 @@
-🟢 DAY 5 — CONTROL FLOW
+LET’S GOOOO 🔥🔥
+You’re cruising now. This day is *foundational* for everything modern: apps, servers, games, AI.
 
-**How programs choose, repeat, and branch**
+Welcome to:
 
-### Today’s goal
+# 🟢 DAY 5 — WHAT IS A PROCESS & A THREAD?
 
-Understand:
+This is where we explain **how work actually happens** inside the OS.
 
-* How **IF** works at the CPU level
-* How **loops** really work
-* What **conditions** mean in binary
-* Why all logic reduces to comparisons + jumps
-
-Still no coding yet — but this is where programs start to feel “alive”.
+Slow. Clear. Examples everywhere.
 
 ---
 
-1️⃣ The CPU Has No “If”
+## 1️⃣ What Is a Process?
 
-Important truth:
+### 📌 Definition
 
-> The CPU does **not** understand `if`, `for`, or `while`.
+A **process** is:
 
-It understands:
+> A **program that is currently running**, with its own memory and resources.
 
-* Compare
-* Jump
+Key idea:
 
-That’s it.
-
----
-
-2️⃣ What Is a Condition?
-
-A condition is a **comparison**.
-
-Examples:
-
-* Is A > B?
-* Is X == 0?
-* Is value != 10?
-
-The result is:
-
-* TRUE (1)
-* FALSE (0)
-
-Binary. Always.
+* Program = file on disk
+* **Process = living instance in RAM**
 
 ---
 
-3️⃣ How IF Works (Conceptually)
+### 🧠 Example
 
-Human idea:
+You have this file:
 
-> If it’s raining, take an umbrella.
+```
+calculator.exe
+```
 
-CPU version:
+You open it:
 
-1. Compare condition
-2. If false → jump over code
-3. If true → continue
+* OS creates a **process**
+* Assigns it:
 
----
+  * Memory
+  * CPU time
+  * Process ID (PID)
 
-### Memory-Level Example
-
-Let’s say:
-
-* A = 5
-* B = 3
-
-CPU does:
-
-1. Load A
-2. Load B
-3. Compare A and B
-4. Set a flag (true/false)
-5. Jump or not
-
-Flags are tiny bits inside CPU registers.
+Now Calculator is **alive**.
 
 ---
 
-4️⃣ What Is a Jump?
+### 🧪 Multiple Processes Example
 
-A **jump** is:
+Open:
 
-> “Go execute instructions at another address”
+* Chrome
+* Spotify
+* Calculator
 
-Types:
+Result:
 
-* Unconditional jump (always go)
-* Conditional jump (go if true / false)
+* 3 separate processes
+* Each isolated
+* One crash ≠ others crash
 
-This is how branching works.
-
----
-
-5️⃣ How Loops Really Work
-
-A loop is just:
-
-> A jump backwards
-
-That’s it.
+This isolation is **on purpose**.
 
 ---
 
-### Loop Example (Conceptual)
+## 2️⃣ What Does a Process Contain?
 
-Human idea:
+A process has its **own private world**.
 
-> Repeat 5 times
+### 📦 Inside a process:
 
-CPU logic:
-
-1. Set counter = 5
-2. Do work
-3. Decrease counter
-4. If counter > 0 → jump back
-5. Else → continue
-
----
-
-6️⃣ Why Infinite Loops Happen
-
-If:
-
-* Condition never becomes false
-* Jump keeps going back
-
-CPU doesn’t know it’s a mistake.
-It obeys.
+```
++------------------+
+| Code             |
+| Data             |
+| Heap             |
+| Stack            |
+| Registers (saved)|
+| PID              |
++------------------+
+```
 
 ---
 
-7️⃣ Everything Reduces to This
+### 🧠 Example
 
-All control flow = combinations of:
+Process: Chrome
 
-* Compare
-* Jump
-* Flags
+It has:
 
-Even:
+* Its own memory
+* Its own tabs data
+* Its own execution state
 
-* Games
-* AI
-* Operating systems
+Calculator **cannot see** Chrome’s memory.
 
 ---
 
-8️⃣ Mental Model (Very Important)
+## 3️⃣ Why Processes Are Heavy
 
-> Programs don’t “decide”.
-> They **follow paths** based on data.
+Processes are:
+
+* Safe
+* Isolated
+* Expensive to create
+
+Why expensive?
+
+* New memory space
+* New mappings
+* Context setup
+
+That’s why OS doesn’t create them lightly.
 
 ---
 
-✏️ DO (Paper Task)
+## 4️⃣ What Is a Thread?
+
+### 📌 Definition
+
+A **thread** is:
+
+> A **single path of execution inside a process**
+
+If a process is a **factory**
+A thread is a **worker inside it**
+
+---
+
+### 🧠 Key rule
+
+> **A process can have multiple threads.**
+
+All threads:
+
+* Share the same memory
+* Share the same heap
+* Share the same code
+
+But each thread has:
+
+* Its own stack
+* Its own registers
+
+---
+
+## 5️⃣ Thread Example (Very Clear)
+
+### 🧠 Example: Browser (ONE process)
+
+Threads:
+
+1. UI thread → handles clicks
+2. Network thread → downloads pages
+3. Render thread → draws content
+4. JS thread → runs scripts
+
+All inside **one process**.
+
+If everything was one thread:
+
+* Browser would freeze constantly 😄
+
+---
+
+## 6️⃣ Process vs Thread (CRITICAL TABLE)
+
+| Feature       | Process  | Thread            |
+| ------------- | -------- | ----------------- |
+| Memory        | Separate | Shared            |
+| Creation      | Slow     | Fast              |
+| Communication | Hard     | Easy              |
+| Safety        | High     | Lower             |
+| Crash impact  | Isolated | Can crash process |
+
+---
+
+### 🧠 Simple analogy
+
+* Process = separate houses
+* Threads = people in the same house
+
+---
+
+## 7️⃣ CPU and Threads (How Execution Really Works)
+
+CPU executes:
+
+> **One thread at a time per core**
+
+---
+
+### 🧠 Example (Single-core CPU)
+
+Threads:
+
+* Thread A
+* Thread B
+
+Timeline:
+
+```
+0–2ms → Thread A
+2–4ms → Thread B
+4–6ms → Thread A
+```
+
+Looks parallel.
+It’s just **switching fast**.
+
+---
+
+### 🧠 Multi-core CPU
+
+If CPU has 4 cores:
+
+* 4 threads can run truly in parallel
+
+---
+
+## 8️⃣ Context Switching (What OS Saves)
+
+When OS switches threads, it saves:
+
+* Registers
+* Program counter
+* Stack pointer
+
+Then loads another thread’s state.
+
+This is called a **context switch**.
+
+---
+
+## 9️⃣ Why Threads Are Dangerous (But Powerful)
+
+Threads share memory.
+
+That means:
+
+* Fast communication ✅
+* Bugs can spread ❌
+
+---
+
+### 🧨 Example Bug
+
+Thread A writes data
+Thread B reads at the same time
+
+Result:
+
+* Corrupted data
+* Random crashes
+
+This is why threading is **hard**.
+
+---
+
+## 🔐 10️⃣ Why OS Still Loves Threads
+
+Because:
+
+* Faster than processes
+* Lower memory usage
+* Essential for performance
+
+Modern software **depends** on threads.
+
+---
+
+## 11️⃣ Real-World Examples
+
+### 🎮 Game
+
+* Thread 1 → rendering
+* Thread 2 → physics
+* Thread 3 → input
+* Thread 4 → audio
+
+---
+
+### 🌐 Web Server
+
+* One process
+* Thousands of threads
+* Each thread handles a user
+
+---
+
+### 🤖 AI Training
+
+* Many threads
+* Massive parallel math
+* Shared data
+
+---
+
+## 🧠 Connect Days 1–5 (Mental Model)
+
+Let’s lock this in:
+
+* CPU executes **threads**
+* Threads live inside **processes**
+* Processes are managed by **OS**
+* OS schedules everything
+* Memory is isolated per process
+
+---
+
+## 🧠 One Sentence That Explains DAY 5
+
+> **A process is a running program, and threads are the parallel execution paths inside it.**
+
+---
+
+## ✏️ Your Task (Paper)
 
 1. Write:
 
-* Condition = ?
-* Jump = ?
-
+   * Program vs Process vs Thread
 2. Draw:
 
-```
-[Compare]
-   ↓
-[Jump if false] → skip
-   ↓
-[Execute code]
-```
+   * One process with 3 threads
+3. Answer:
 
-3. Explain in your own words:
-
-> How does a loop work internally?
+   * Why threads are faster than processes
 
 ---
 
-🧠 Lock-in Thought
+When ready:
+👉 Say **“DAY 5 CLEAR”**
 
-> Intelligence is just structured branching.
-
----
-
-
-
-
-
+Next 🔥
+🟢 **DAY 6 — HOW THE CPU ACTUALLY EXECUTES INSTRUCTIONS (PIPELINES, CORES)**
