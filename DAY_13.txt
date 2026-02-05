@@ -1,129 +1,276 @@
-🟢 DAY 13 — MEMORY HIERARCHY & CACHES
+LETS GOOOO 🔥🔥
+Now we’re entering the **guardian layer** of computing: security and permissions. Day 13 is all about **how the OS keeps your programs and data safe**.
 
-**Why some programs feel instant and others lag**
+Welcome to:
 
-### Today’s goal
+# 🟢 DAY 13 — HOW OPERATING SYSTEMS PROTECT YOU
 
-Understand:
+**(Security, Permissions, Users, and Access Control)**
 
-* How CPU accesses memory at different speeds
-* What caches are and why they matter
-* Why data placement affects performance
-* How programs naturally “feel fast” or “slow”
+Big idea today:
 
-Still no coding. Pure systems thinking.
+> The OS enforces rules so programs **cannot harm each other or the system**, and users get only the access they deserve.
 
----
-
-1️⃣ Memory Is Not Equal
-
-Different memory types:
-
-| Memory Type | Speed     | Size   | Cost           |
-| ----------- | --------- | ------ | -------------- |
-| Registers   | Fastest   | Tiny   | Built into CPU |
-| Cache       | Very fast | Small  | CPU adjacent   |
-| RAM         | Fast      | Medium | Cheap          |
-| Disk/SSD    | Slow      | Large  | Cheapest       |
-| Network     | Very slow | Huge   | Expensive      |
+We’ll break this **slowly, clearly, with examples**.
 
 ---
 
-2️⃣ Why This Matters
+## 1️⃣ Why OS Security Exists
 
-CPU can do billions of instructions per second, but:
+Without protection:
 
-* Fetching from RAM = hundreds of cycles
-* Fetching from disk = millions of cycles
+* One program could read your password file
+* Malware could overwrite your system
+* Any app could crash everything
 
-If the CPU waits, the program feels slow.
+The OS enforces rules:
 
----
-
-3️⃣ What Is Cache?
-
-**Cache** = tiny, fast memory **close to the CPU**.
-
-* Stores frequently used data
-* Reduces need to access slower RAM
-* Managed automatically by hardware
+* **Who** can do **what**
+* **Which resources** programs can touch
 
 ---
 
-### Analogy
+## 2️⃣ Users and Accounts
 
-* Registers = tools in your hand
-* Cache = desk drawer
-* RAM = bookshelf
-* Disk = warehouse
+### 📌 Definition
 
-CPU always grabs tools from **closest available place**.
+The OS identifies **users** and gives each:
 
----
-
-4️⃣ Cache Levels
-
-* L1 = fastest, smallest, inside CPU
-* L2 = bigger, slightly slower
-* L3 = bigger still, shared in multi-core CPUs
-
-Programs that access memory **predictably** benefit most from caches.
+* UID (User ID)
+* Permissions
+* Home directory
 
 ---
 
-5️⃣ Locality Principle
+### 🧠 Example
 
-Two types:
-
-1. **Temporal locality**
-
-   * If used once, likely used again soon
-   * Example: Loop counter
-
-2. **Spatial locality**
-
-   * If one memory cell is used, nearby cells likely used
-   * Example: Array traversal
-
-Programs that exploit locality → faster
+* Alice → UID 1001 → can access `/home/alice`
+* Bob → UID 1002 → can access `/home/bob`
+* Alice cannot read Bob’s files without permission
 
 ---
 
-6️⃣ Why Programs Lag
+### 🧪 Real-world Example
 
-* Random memory access → cache misses → CPU waits
-* Large datasets → RAM swaps to disk → noticeable lag
-* Poor algorithm + bad data layout → magnified delays
-
----
-
-7️⃣ Mental Model
-
-> CPU speed is meaningless without memory harmony
-> Cache = “fast lane” for instructions and data
+* Linux `chmod 700 secret.txt` → only owner can read/write
+* Windows → file properties → “Only Me” access
 
 ---
 
-✏️ DO (Paper Task)
+## 3️⃣ File Permissions (Very Concrete)
 
-1. Draw memory hierarchy:
+OS stores **permissions for each file**:
 
-```
-Registers → Cache → RAM → Disk → Network
-```
+| Type    | Meaning                   |
+| ------- | ------------------------- |
+| Read    | Can view contents         |
+| Write   | Can modify contents       |
+| Execute | Can run if it’s a program |
 
-2. Write:
+---
 
-* Temporal locality = ?
-* Spatial locality = ?
+### 🧠 Example
 
+File: `app.exe`
+
+* User → read + execute
+* Guest → read only
+* Other programs → no access
+
+---
+
+### ⚡ Why it matters
+
+* Prevents malware from executing
+* Prevents accidental deletion
+* Separates users’ work
+
+---
+
+## 4️⃣ Process Isolation (Review)
+
+Remember from Day 5 & 9:
+
+* Each process has **its own memory**
+* Programs can’t see each other’s memory **unless OS allows it**
+
+This is **security by isolation**.
+
+---
+
+### 🧠 Example
+
+* Chrome tab 1 → private memory
+* Chrome tab 2 → private memory
+* Tab 1 crash → OS kills only that tab
+
+---
+
+## 5️⃣ System Calls — Controlled Access to Hardware
+
+Programs **cannot touch hardware directly**.
+
+They ask OS using **system calls**:
+
+### 📌 Example
+
+* Read file → `read()` system call
+* Open network → `socket()` system call
+
+OS checks:
+
+* Does this user have permission?
+* Is this action allowed?
+
+If not → OS denies → prevents damage
+
+---
+
+## 6️⃣ Kernel Mode vs User Mode
+
+### 📌 Concept
+
+CPU has **modes**:
+
+| Mode        | What it can do            |
+| ----------- | ------------------------- |
+| User Mode   | Limited, runs programs    |
+| Kernel Mode | Full access, runs OS code |
+
+---
+
+### 🧠 Example
+
+* Your program tries to access raw disk → CPU raises fault → OS stops it
+* Kernel code can read/write disk safely
+
+This is **hardware-enforced protection**.
+
+---
+
+## 7️⃣ Access Control Lists (ACLs) & Permissions
+
+### 📌 Idea
+
+Each resource can have a list:
+
+* Who can read
+* Who can write
+* Who can execute
+
+---
+
+### 🧠 Example
+
+File: `bank_records.csv`
+
+| User  | Permissions |
+| ----- | ----------- |
+| Alice | Read/Write  |
+| Bob   | Read only   |
+| Guest | None        |
+
+OS checks **every access**.
+
+---
+
+## 8️⃣ Security in Memory Management
+
+From Day 7 & 9:
+
+* Virtual memory + paging = **isolation**
+* Each process can’t touch another process’s pages
+* Stack, heap, and cache are **sandboxed per process**
+
+---
+
+### 🧠 Example
+
+* Malware tries to read password manager memory → OS prevents it → segmentation fault
+
+---
+
+## 9️⃣ Secure Boot & Firmware Protection
+
+From Day 12 (boot):
+
+* Modern systems check OS signatures before running
+* Prevents:
+
+  * Malware replacing bootloader
+  * Unauthorized OS versions
+
+---
+
+### 🧪 Example
+
+* Windows Secure Boot
+* Mac T2 chip secure boot
+
+Prevents boot-level malware.
+
+---
+
+## 10️⃣ User Awareness & File System Security
+
+* OS shows warnings: “Do you want to allow this program?”
+* Enforces “administrator rights” for critical actions
+
+---
+
+### 🧠 Example
+
+* Installing software on Windows → “Run as Admin”
+* Linux sudo → temporary elevated rights
+
+---
+
+## 11️⃣ Summary of Protections
+
+1. **User Accounts** → separate identities
+2. **File Permissions** → control access
+3. **Process Isolation** → programs can’t touch each other
+4. **System Calls & Kernel Mode** → controlled hardware access
+5. **Virtual Memory** → memory safety
+6. **Secure Boot** → OS integrity
+
+All together, this makes modern computers **safe and stable**.
+
+---
+
+## 🔗 Connect Days 1–13 (BIG PICTURE)
+
+* CPU executes instructions → runs threads → inside processes
+* OS enforces boundaries → memory, files, devices
+* Permissions + isolation = system safety
+* Boot & firmware = trustworthy starting point
+
+You now understand **why your programs don’t destroy each other or the OS**.
+
+---
+
+## 🧠 One Sentence That Explains DAY 13
+
+> **The OS protects users and programs by controlling access to memory, files, devices, and system resources.**
+
+---
+
+## ✏️ Your Task (Paper)
+
+1. Write:
+
+   * 3 ways OS protects programs/users
+2. Draw:
+
+   * User → Process → OS → Resource
 3. Answer:
 
-> Why can a simple loop feel instant, but random access feel slow?
+   * Why kernel mode vs user mode exists
 
 ---
 
+When ready:
+👉 Say **“DAY 13 CLEAR”**
 
-
-
-
+Next 🔥
+🟢 **DAY 14 — PUTTING IT ALL TOGETHER: HOW A COMPUTER REALLY WORKS FROM POWER ON TO PROGRAMS RUNNING**
