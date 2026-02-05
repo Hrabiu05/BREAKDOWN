@@ -1,12 +1,22 @@
-🟢 DAY 2 — BITS, BYTES & MEMORY:
+LET’S GO 🚀
+You’ve earned this. Welcome to:
+
+# 🟢 DAY 2 — BITS, BYTES & MEMORY
+
 *(This is where computers stop feeling “mystical” and start feeling obvious.)*
+
 I’ll break **everything**, with **examples on each part**, slow and clean.
 
 ---
-1️⃣ What is a BIT?:
-📌 Definition;
+
+## 1️⃣ What is a BIT?
+
+### 📌 Definition
+
 A **bit** is the **smallest unit of information** in a computer.
+
 A bit can be **only one of two values**:
+
 * `0` → OFF
 * `1` → ON
 
@@ -14,16 +24,22 @@ That’s it.
 No numbers, no letters, no colors yet.
 
 ---
-💡 Real-world analogy:
+
+### 💡 Real-world analogy
+
 Think of a **light switch**:
+
 * OFF = 0
 * ON = 1
 
 Computers are made of **billions of tiny switches**.
 
 ---
-🧠 Why only 0 and 1?:
+
+### 🧠 Why only 0 and 1?
+
 Because:
+
 * Electronics are reliable with **two states**
 * Voltage LOW = 0
 * Voltage HIGH = 1
@@ -31,72 +47,117 @@ Because:
 Simple = fast = stable.
 
 ---
-✅ Example
+
+### ✅ Example
+
 If I give you:
+
+```
 1
+```
+
 That’s **one bit**.
 
 If I give you:
+
+```
 0
+```
+
 Still **one bit**.
 
 Alone, a bit is almost useless.
 Power comes from **groups of bits**.
 
 ---
-2️⃣ What is a BYTE?:
-📌 Definition;
+
+## 2️⃣ What is a BYTE?
+
+### 📌 Definition
+
 A **byte = 8 bits**
 
 Example:
+
+```
 01000001
+```
 
 That’s **one byte**.
 
 ---
-🧠 Why 8 bits?:
-History + practicality;
+
+### 🧠 Why 8 bits?
+
+History + practicality:
+
 * 8 bits can represent **256 different values**
 * Enough to store:
+
   * letters
   * numbers
   * symbols
 
 ---
-🔢 How many values can 1 byte store?:
-Each bit has 2 choices...
+
+### 🔢 How many values can 1 byte store?
+
+Each bit has 2 choices.
 
 So:
+
+```
 2⁸ = 256 values
+```
 
 Range:
+
+```
 0 → 255
+```
 
 ---
-✅ Byte example (numbers)
+
+### ✅ Byte example (numbers)
+
+```
 00000000 = 0
 00000001 = 1
 00000010 = 2
+...
 11111111 = 255
+```
 
 ---
-✅ Byte example (letters):
-Using ASCII encoding;
+
+### ✅ Byte example (letters)
+
+Using ASCII encoding:
+
+```
 01000001 = 'A'
 01000010 = 'B'
 01100001 = 'a'
+```
 
 So the letter **A** is literally:
+
 > a pattern of ONs and OFFs
 
 ---
-3️⃣ How Do Numbers Work in Binary?:
+
+## 3️⃣ How Do Numbers Work in Binary?
+
 Computers don’t understand **base 10** like humans.
 They use **base 2 (binary)**.
 
 ---
-🔢 Binary counting:
+
+### 🔢 Binary counting
+
 Decimal → Binary
+
+```
 0  = 0000
 1  = 0001
 2  = 0010
@@ -106,26 +167,41 @@ Decimal → Binary
 6  = 0110
 7  = 0111
 8  = 1000
+```
 
 Each position means:
+
+```
 1  2  4  8  16  32 ...
+```
 
 ---
-✅ Example: Binary 101:
+
+### ✅ Example: Binary 101
+
+```
 1×4 + 0×2 + 1×1 = 5
+```
 
 So:
+
+```
 101 = 5
+```
 
 ---
-4️⃣ How Does Text Become Bits?:
-Computers use **encoding systems**...
+
+## 4️⃣ How Does Text Become Bits?
+
+Computers use **encoding systems**.
 
 The most basic one:
+
 ### ASCII
 
 ---
-📌 ASCII example:
+
+### 📌 ASCII example
 
 | Character | Binary   |
 | --------- | -------- |
@@ -136,57 +212,90 @@ The most basic one:
 | !         | 00100001 |
 
 So the word:
+
+```
 "Hi"
+```
+
 Is stored as:
+
+```
 H → 01001000
 i → 01101001
+```
 
 ---
-🧠 Important realization:
+
+### 🧠 Important realization
+
 > Computers do NOT know what letters are.
 > They only know numbers.
 > **Meaning is assigned by humans.**
 
 ---
-5️⃣ What is Memory Really?:
-📌 Memory = numbered boxes;
+
+## 5️⃣ What is Memory Really?
+
+### 📌 Memory = numbered boxes
+
 RAM is just:
+
 > A huge list of boxes, each holding **1 byte**
 
 Each box has:
+
 * An **address**
 * A **value**
 
 Example:
+
+```
 Address   Value
 0x1000 → 01000001
 0x1001 → 01000010
+```
 
 ---
-🧠 Memory address example:
+
+### 🧠 Memory address example
+
 If RAM says:
+
+```
 Address 2048 = 01001000
+```
 
 CPU understands:
+
 > “At place 2048, the value is 72 (H)”
 
 ---
-6️⃣ How Programs Use Memory:
+
+## 6️⃣ How Programs Use Memory
+
 Example: Store number 10
 
 Binary:
+
+```
 10 = 00001010
+```
 
 Stored in RAM:
+
+```
 Address 3000 → 00001010
+```
 
 CPU later:
+
 * Reads address 3000
 * Loads value into register
 * Uses it
 
 ---
-7️⃣ Bigger Memory Units (Very important)
+
+## 7️⃣ Bigger Memory Units (Very important)
 
 | Unit | Size             |
 | ---- | ---------------- |
@@ -197,14 +306,20 @@ CPU later:
 | GB   | ~1 billion bytes |
 
 ---
-✅ Example:
-A **1 GB RAM** can store;
+
+### ✅ Example
+
+A **1 GB RAM** can store:
+
 * ~1 billion characters
 * ~250 million integers (4 bytes each)
 
 ---
-8️⃣ How Everything Connects (Big Picture):
-Let’s connect **DAY 1 + DAY 2**;
+
+## 8️⃣ How Everything Connects (Big Picture)
+
+Let’s connect **DAY 1 + DAY 2**:
+
 1. Programs are stored as **bytes**
 2. Bytes are stored in **RAM**
 3. CPU reads bytes
@@ -212,18 +327,27 @@ Let’s connect **DAY 1 + DAY 2**;
 5. Everything becomes **bits**
 
 ---
-🧠 One Sentence That Explains DAY 2:
+
+## 🧠 One Sentence That Explains DAY 2
+
 > **All data—numbers, text, images, programs—is just patterns of 0s and 1s stored in memory.**
 
 ---
-✏️ Your Task (Do this on paper):
+
+## ✏️ Your Task (Do this on paper)
+
 1. Write what a **bit** is
 2. Write what a **byte** is
 3. Convert:
+
    * Binary `1010` → decimal
    * Decimal `7` → binary
 4. Write how the letter **A** is stored
 
 ---
 
+When you finish:
+👉 Say **“DAY 2 CLEAR”**
 
+Next up 🔥
+🟢 **DAY 3 — HOW PROGRAMS ARE STORED & RUN (FILES → RAM → CPU)**
