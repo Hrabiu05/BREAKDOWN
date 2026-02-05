@@ -1,223 +1,335 @@
-🟢 DAY 6 — WHAT AN OPERATING SYSTEM REALLY DOES
+LETS GOOOOOO 🔥🔥
+You’re officially past the “basic user” line now.
 
-**The boss of all programs**
+Welcome to:
 
-### Today’s goal
+# 🟢 DAY 6 — HOW THE CPU ACTUALLY EXECUTES INSTRUCTIONS
 
-Understand:
+*(Cores, Pipelines, Clock, Real Execution)*
 
-* Why the OS exists
-* What problems it solves
-* How it controls CPU, memory, and programs
-* What *really* happens when multiple programs run
+Today we zoom **inside the CPU**.
+Not magic. Not buzzwords. **Mechanics**.
 
-Still no coding. Systems thinking.
-
----
-
-1️⃣ Why an Operating System Exists
-
-Imagine:
-
-* No OS
-* Programs talk directly to hardware
-
-Problems:
-
-* Programs overwrite each other’s memory
-* Multiple programs fight for CPU
-* Anyone can crash the machine
-* No security
-
-So we need a **manager**.
+Slow, clean, with **examples at every step**.
 
 ---
 
-2️⃣ What Is an Operating System?
+## 1️⃣ The CPU Is Not “One Thing”
 
-An **Operating System (OS)** is:
+People say “the CPU does this”, but internally it’s a **mini factory**.
 
-> A program that manages **hardware** and **other programs**
+Inside a modern CPU:
 
-Examples:
+* Multiple **cores**
+* Pipelines
+* Caches
+* Execution units
+* Control logic
 
-* Windows
-* Linux
-* macOS
-* Android
-
-The OS:
-
-* Starts first
-* Never stops (until shutdown)
-* Controls access to hardware
+Let’s break this layer by layer.
 
 ---
 
-3️⃣ Core Responsibilities of an OS
+## 2️⃣ What Is a CPU Core?
 
-### 🔹 1. Process Management (CPU control)
+### 📌 Definition
 
-CPU can run **one thing at a time per core**.
+A **core** is:
 
-OS creates the illusion of multitasking by:
-
-* Giving each process a tiny time slice
-* Switching very fast
-
-This is called **context switching**.
+> An independent execution unit that can run threads.
 
 ---
 
-🧠 Example
+### 🧠 Example
 
-You:
+* 1-core CPU → 1 thread at a time
+* 4-core CPU → 4 threads truly at once
+* 8-core CPU → 8 threads at once
 
-* Listen to music
-* Browse web
-* Chat
+So when your CPU says **8 cores**:
 
-CPU:
-
-* Music (2 ms)
-* Browser (2 ms)
-* Chat (2 ms)
-* Repeat
-
-Feels simultaneous.
+> It’s like having 8 mini-CPUs.
 
 ---
 
-4️⃣ Memory Management
+### 🎯 Example (Real life)
 
-OS:
+Browser has:
 
-* Gives each program its own memory space
-* Prevents programs from touching others
+* UI thread
+* Network thread
+* Render thread
 
-This is why:
+If you have 4 cores:
 
-* One app crashing ≠ system crash
+* These threads can **literally run at the same time**
 
-Virtual memory makes programs think:
-
-> “I own the whole memory.”
-
-They don’t.
+No illusion. Real parallelism.
 
 ---
 
-5️⃣ File System Management
+## 3️⃣ Clock Speed (GHz) — What Does It REALLY Mean?
 
-OS:
+### 📌 Definition
 
-* Organizes disk into files & folders
-* Controls read/write access
-* Keeps track of locations
-
-Programs never talk to disk directly.
-They ask the OS.
-
----
-
-6️⃣ Hardware Abstraction
-
-Hardware is messy.
-
-OS provides:
-
-* Simple interfaces
-* Drivers for hardware
+Clock speed = how many **cycles per second** the CPU runs.
 
 Example:
 
-> Program says: “Print this”
-> OS figures out **how**.
+* 3.0 GHz = 3 billion cycles per second
 
 ---
 
-7️⃣ Security & Permissions
+### 🧠 IMPORTANT
+
+A **cycle is NOT an instruction**.
+
+An instruction may take:
+
+* 1 cycle
+* Or many cycles
+
+---
+
+### 🚗 Analogy
+
+* Clock speed = engine RPM
+* Instructions = distance traveled
+
+High RPM ≠ always faster travel.
+
+---
+
+## 4️⃣ Instruction Execution (The Old Simple Way)
+
+Originally, CPUs worked like this:
+
+1. Fetch instruction
+2. Decode instruction
+3. Execute instruction
+4. Store result
+
+One instruction at a time.
+
+This was **slow**.
+
+---
+
+## 5️⃣ Pipelines (THIS IS HUGE)
+
+### 📌 Idea
+
+Instead of waiting for one instruction to finish completely…
+
+> **Overlap them.**
+
+---
+
+### 🧠 Pipeline Stages
+
+Think of an assembly line:
+
+| Stage      | What happens    |
+| ---------- | --------------- |
+| Fetch      | Get instruction |
+| Decode     | Understand it   |
+| Execute    | Do the work     |
+| Write-back | Save result     |
+
+---
+
+### 🧪 Pipeline Example
+
+Instructions:
+
+* I1
+* I2
+* I3
+
+Timeline:
+
+```
+Cycle 1: Fetch I1
+Cycle 2: Decode I1 | Fetch I2
+Cycle 3: Execute I1 | Decode I2 | Fetch I3
+Cycle 4: Write I1 | Execute I2 | Decode I3
+```
+
+🔥 Multiple instructions **in flight** at once.
+
+---
+
+### 🧠 Key Insight
+
+> Pipelines increase **throughput**, not instruction speed.
+
+---
+
+## 6️⃣ Superscalar Execution (Even Wilder)
+
+Modern CPUs don’t just pipeline.
+
+They:
+
+* Execute **multiple instructions per cycle**
+* If instructions are independent
+
+---
+
+### 🧠 Example
+
+Instruction A: add numbers
+Instruction B: load from memory
+
+If no conflict:
+
+* CPU runs both at the same time
+
+This is why CPUs are insanely fast.
+
+---
+
+## 7️⃣ Caches (Why RAM Feels “Slow”)
+
+RAM is fast.
+CPU is **much faster**.
+
+So CPUs use **caches**.
+
+---
+
+### 📌 Cache Levels
+
+| Level | Speed      | Size   |
+| ----- | ---------- | ------ |
+| L1    | Ultra fast | Tiny   |
+| L2    | Very fast  | Small  |
+| L3    | Fast       | Bigger |
+
+---
+
+### 🧠 Example
+
+CPU wants data:
+
+1. Check L1 cache ❓
+2. If not → L2
+3. If not → L3
+4. If not → RAM 😭
+
+---
+
+### 🧠 Why this matters
+
+Programs that:
+
+* Reuse data
+* Access memory predictably
+
+→ run MUCH faster.
+
+---
+
+## 8️⃣ Branching & Prediction (CPU Tries to Guess)
+
+Instruction:
+
+> “If X > 5, jump here”
+
+CPU hates waiting.
+
+So it:
+
+* **Predicts** which path will be taken
+* Starts executing early
+
+---
+
+### 🧠 Example
+
+If prediction is right:
+
+* Huge speed boost
+
+If wrong:
+
+* CPU discards work
+* Pipeline flushed 😬
+
+This is called **branch misprediction**.
+
+---
+
+## 9️⃣ Hyper-Threading / SMT (Bonus Power)
+
+Some CPUs allow:
+
+> **One core to run two threads**
+
+How?
+
+* When one thread waits (e.g. memory)
+* Other thread uses the core
+
+---
+
+### 🧠 Example
+
+1 core → 2 logical threads
+
+Not double speed, but **better efficiency**.
+
+---
+
+## 🔁 10️⃣ How OS Schedules on Cores
 
 OS decides:
 
-* Who can run what
-* Who can access which files
-* What needs admin rights
+* Which thread goes to which core
+* When to pause or resume
 
-This protects:
-
-* System
-* User
-* Data
+CPU executes what OS gives it.
 
 ---
 
-8️⃣ User Space vs Kernel Space
+## 🧠 Big Picture (Connect Everything)
 
-### User Space
+Let’s lock it all together:
 
-* Normal programs
-* Limited power
-* Can’t touch hardware directly
-
-### Kernel Space
-
-* OS core
-* Full access
-* Dangerous if broken
-
-System calls are the bridge.
+* CPU has **cores**
+* Cores run **threads**
+* Threads execute **instructions**
+* Instructions flow through **pipelines**
+* Data comes from **cache → RAM**
+* OS schedules everything
 
 ---
 
-9️⃣ What Happens When You Run a Program (OS View)
+## 🧠 One Sentence That Explains DAY 6
 
-1. You click program
-2. OS checks permissions
-3. OS allocates memory
-4. OS loads program
-5. OS schedules CPU time
-6. Program runs
-7. OS cleans up after exit
-
-OS is always watching.
+> **Modern CPUs achieve speed by running many instructions in parallel using cores, pipelines, caches, and prediction.**
 
 ---
 
-🧠 Mental Model (Critical)
+## ✏️ Your Task (Paper — Important)
 
-> The OS is a **referee**, not a player.
+1. Draw:
 
----
+   * One CPU
+   * 2 cores
+   * Each core with pipeline stages
+2. Write:
 
-✏️ DO (Paper Task)
+   * What a core is
+   * What a pipeline is
+3. Answer:
 
-1. Write:
-
-* OS = ?
-
-2. List:
-
-* 4 things OS controls
-
-3. Draw:
-
-```
-User Programs
-     ↓
- Operating System
-     ↓
- Hardware
-```
+   * Why cache exists
 
 ---
 
-🧠 Lock-in Thought
+When ready:
+👉 Say **“DAY 6 CLEAR”**
 
-> Without an OS, modern computers are chaos.
-
----
-
-
-
-
+Next up 🔥
+🟢 **DAY 7 — MEMORY DEEP DIVE (STACK vs HEAP vs CACHE)**
