@@ -42,3 +42,10 @@ https://chatgpt.com/s/t_6985397459488191b4c9c521be972b2f
 
 DAY 14:
 https://chatgpt.com/s/t_698539a5cf8c81918c8f69375d3537a6
+
+
+
+C flag species: https://chatgpt.com/s/t_699c2072db7c8191bb93be011e96bcad
+
+C flags:
+https://chatgpt.com/s/t_699c20f10d448191a575d4791453e5ee
